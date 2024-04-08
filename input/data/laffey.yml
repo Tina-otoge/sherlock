@@ -1,0 +1,19 @@
+style:
+  background: azur-lane-elite-background.jpg
+  background_color: blueviolet
+  welcome: laffey-drink-anime.gif
+  favicon: laffey-chibi.png
+
+specs:
+  domain: laffey.tina.moe
+  location: Canada
+  product: Kimsufi KS-10
+  os: Rocky Linux 9.3
+  cpu: Intel i5-3570S @ 3.8GHz
+  ram: 16 GiB DDR3 1333MHz
+  storage: 1x 2TB SATA
+
+services:
+  cockpit: https://laffey.tina.moe/cockpit/
+  flood: https://laffey.tina.moe/flood/
+  qbittorrent: https://laffey.tina.moe/qbit

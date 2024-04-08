@@ -1,0 +1,19 @@
+style:
+  welcome: NagatoNew_Year.png
+  welcome_shadow: false
+  background: azur-lane-super-rare-background.jpg
+  favicon: NagatoChibi.png
+
+specs:
+  domain: nagato.lan
+  url: http://nagato.lan
+  location: Tinarcade
+  product: Raspberry Pi 4 Model B Rev 1.5
+  os: Rocky Linux 9.3
+  cpu: 4 cores BCM2835 @ 1.5GHz
+  ram: 8 GB
+  storage: 128 GB (MMC) + 8 TB TOSHIBA NAS N300 (USB connected drives bay)
+
+services:
+  cockpit: https://turbo.tina.moe/cockpit/
+  flood: https://turbo.tina.moe/flood/

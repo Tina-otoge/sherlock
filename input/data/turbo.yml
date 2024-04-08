@@ -1,0 +1,17 @@
+style:
+  welcome: turbo.webp
+  welcome_shadow: false
+  background: road.jpg
+
+specs:
+  domain: turbo.tina.moe
+  location: Paris region, France
+  product: Freebox Delta Server (KVM)
+  os: Rocky Linux 9.3
+  cpu: 2 (KVM)
+  ram: 957 MB (KVM)
+  storage: 32 GB (KVM) + 1 TB (Freebox Delta Server HDD)
+
+services:
+  cockpit: https://turbo.tina.moe/cockpit/
+  flood: https://turbo.tina.moe/flood/

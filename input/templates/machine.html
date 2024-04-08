@@ -1,0 +1,216 @@
+{%- set name = page.parent.name %}
+{%- set machine = data[name] %}
+<!doctype html>
+<meta charset="utf-8">
+<title>{{ name | title }} on Ragondin Network</title>
+<link rel="shortcut icon" href="{{ machine.style.favicon or machine.style.welcome }}">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --darken: rgba(0, 0, 0, .333);
+        --darker: rgba(0, 0, 0, .777);
+        --text-primary: white;
+        --text-secondary: lightgray;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        background-color: {{ machine.style.background_color | default('#000') }};
+    }
+
+    body {
+        margin: 0;
+        background:
+            rgba(0, 0, 0, {{ machine.style.background_darken | default(0.5) }})
+            url('{{ machine.style.background }}');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        background-size: cover;
+        font-family: 'Quicksand', sans-serif;
+        color: var(--text-primary);
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    body::before {
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--darken);
+        z-index: -1;
+    }
+
+    a,
+    a:visited {
+        text-decoration: none;
+        color: lightblue;
+    }
+
+    a:hover,
+    a:active {
+        text-decoration: underline;
+    }
+
+    body,
+    h1,
+    #useful-links .content,
+    #need-an-access {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 2em auto 1em;
+    }
+
+    img,
+    .twitter-tweet-rendered {
+        border-radius: 3%;
+        box-shadow: 0 0 10px var(--darker);
+        max-width: 100%;
+    }
+
+
+    .twitter-tweet {
+        display: none;
+    }
+
+    .twitter-tweet-rendered {
+        display: initial;
+    }
+
+    #welcome-pic {
+        margin: 2em auto;
+        {% if not machine.style.get('welcome_shadow', True) %}
+        box-shadow: none;
+        {% endif %}
+        max-height: 500px;
+    }
+
+    #description {
+        max-width: 800px;
+        padding: 0 1em;
+        margin: 0 auto;
+    }
+
+    #specs {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #specs .key {
+        font-weight: bold;
+        color: var(--text-secondary);
+    }
+
+    #apps {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #apps .item {
+        width: 400px;
+        margin: 1em;
+    }
+
+    #apps .image img {
+        height: 200px;
+    }
+
+    #apps .description {
+        font-size: 0.8em;
+    }
+</style>
+<img src="{{ machine.style.welcome }}" id="welcome-pic">
+<h1>
+    {{ name | title }}
+    <small>part of <a href="https://tina.moe">Tina</a>'s "Ragondin" Network</small>
+</h1>
+
+<div id="description">
+    {{ markdown }}
+</div>
+
+<h2>Machine</h2>
+<ul id="specs">
+    <li><span class="key">Domain</span>:
+        <a href="{{ machine.specs.url or 'https://' + machine.specs.domain }}">
+            {{ machine.specs.domain }}
+        </a>
+    </li>
+    <li><span class="key">Location</span>: {{ machine.specs.location }}</li>
+    <li><span class="key">Product</span> : {{ machine.specs.product }}</li>
+    <li><span class="key">OS</span>: {{ machine.specs.os }}</li>
+    <li><span class="key">CPU</span>: {{ machine.specs.cpu }}</li>
+    <li><span class="key">RAM</span>: {{ machine.specs.ram }}</li>
+    <li><span class="key">Storage</span>: {{ machine.specs.storage }}</li>
+</ul>
+
+{% if machine.services is defined %}
+<h2>Tools</h2>
+<div id="apps">
+    {% for name, url in machine.services.items() %}
+    {% set info = data.common.services.get(name) %}
+    <article class="item">
+        <h3 class="name">
+            <a href="{{ url }}">
+                {{ info.get('name') or name | title }}
+            </a>
+        </h3>
+        <div class="image">
+            <a href="{{ url }}">
+                <img src="{{ info.image }}">
+            </a>
+        </div>
+        <p class="description">
+            {{ info.description }}
+        </p>
+        <p>
+            <a href="{{ info.project_url }}">More info</a>
+        </p>
+    </article>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+<!--
+<div id="useful-links">
+	<h2>Useful links</h2>
+	<div class="content">
+		<a href="https://tina.moe">Tina's homepage</a>
+		<a href="/flood">Torrents web UI (Flood)</a>
+		<a href="https://paypal.me/skielred/5">Paying for the server (Paypal)</a>
+	</div>
+</div>
+
+<div id="need-an-access">
+	<h2>Need an access?</h2>
+	<p>Please reach me through Discord at Tina#1998 or Twitter at <a href="https://twitter.com/Shookaite">@Shookaite</a>.</p>
+	<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Do you need a server to run games, bots, websites, torrent clients, or whatever non-stop?<br><br>For any amount between 4 and 8€ / month (you name your own price!), you get unlimited access to my dedicated server!!<br><br>Bonuses:<br>- 24h/24 tech assistance from Tina<br>- Shared torrents folder <a href="https://t.co/9V18QuMkxw">pic.twitter.com/9V18QuMkxw</a></p>&mdash; Tina 🌸 (@Shookaite) <a href="https://twitter.com/Shookaite/status/1282438501183762433?ref_src=twsrc%5Etfw">July 12, 2020</a></blockquote>
+</div>
+-->
+
+<footer>
+    <p>
+        <a href="https://tina.moe">Tina</a> &bull;
+        <a href="https://twitter.com/Tina_otoge">X</a> &bull;
+        <a href="https://github.com/Tina-otoge/sherlock">Source</a>
+    </p>
+</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
