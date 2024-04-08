@@ -16,4 +16,3 @@ specs:
 
 services:
   cockpit: https://turbo.tina.moe/cockpit/
-  flood: https://turbo.tina.moe/flood/
