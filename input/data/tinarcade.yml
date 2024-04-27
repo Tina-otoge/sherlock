@@ -1,0 +1,155 @@
+games:
+  2dx:
+    name: beatmania IIDX
+    permanent: true
+    controllers:
+      - name: Controller from official cabinet (legacy model)
+        notes: "Used, bought on YAJ via ZenMarket. IO: qiyubi's custom PCB for official IIDX IO"
+        cost: ¥28,000 (165€) + shipping ¥26,931 (159€) + customs
+        date: 2023-07-05
+        specs:
+          buttons: SANWA
+          springs: SANWA OBSA-SP-20 (20g)
+          switches: Omron D2MV-01-1C1 (10g)
+      - name: GAMO2 FPS EMP
+        cost: Gift from family
+        date: 2015-12-25
+        specs:
+          buttons: DJDAO custom
+          springs: DJDAO 40g
+          switches: Honeywell-V15S05-EZ015 (15g)
+        use: false
+        notes: Used for events now
+      - name: GAMO2 FPS EMP (2021 rev)
+        cost: $172 + shipping $103
+        date: 2021-11-15
+        specs:
+          buttons: DJDAO custom
+          springs: DJDAO 40g
+          switches: Honeywell-V15S05-EZ015 (15g)
+        use: false
+        notes: Pink TT LED, used for events now
+      - name: KONAMI KOC PS2
+        cost: Gift from bemani-inside
+        use: false
+    displays:
+      main:
+        name: iiyama G-Master G4380UHSU-B1 42.5" 4K 144Hz
+        links:
+          amazon fr: https://www.amazon.fr/gp/product/B09QGXV18B/
+        cost: 600€
+        date: 2023-06-14
+      subscreen:
+        name: Dell P2418HT 24" 1080p touchscren
+        links:
+          amazon fr: https://www.amazon.fr/gp/product/B01N1Q0M4O/
+    audio:
+      speakers:
+        name: Logitech Z313 2.1
+        cost: 30€
+        date: 2023-02-08
+        links:
+          amazon fr: https://www.amazon.fr/gp/product/B003LNXT7Y
+      card:
+        name: ASUS XONAR AE 7.1 ASIO
+        cost: 48€
+        date: 2024-02-29
+        notes: Used, bought on leboncoin
+    card: true
+    headphones: true
+
+  sdvx:
+    name: SOUND VOLTEX
+    permanent: true
+    controllers:
+      - name: GAMO2 FauceTwo (VW Edition)
+        notes: Used, bought off @konakwa
+        cost: 220€
+        date: 2023-02-14
+        specs:
+          buttons: DJDAO custom
+          springs: DJDAO 60g
+          switches: "BT: Omron V-10-1A4 (100g), FX: Omron D2MV-01-1C2 (25g)"
+      - name: VIRGOO TurboCharger+
+        cost: Gift from family (approx. 300€)
+        date: 2016-12-07
+        use: false
+    displays:
+      main:
+        name: Samsung Odyssey G3 32" 1080p 165Hz
+        cost: 200€
+        links:
+          carrefour: https://www.carrefour.fr/p/ecran-pc-odyssey-g3-32-samsung-8806092802179
+      subcreen:
+        name: HMTECH 10" Display For Raspberry Pi 1080p touchscreen
+        cost: Gift from work
+    audio:
+      speakers:
+        name: Logitech Z213 2.1
+        links:
+          amazon fr: https://www.amazon.fr/gp/product/B00JKDN6RW
+      card:
+        name: ASUS XONAR AE 7.1 ASIO
+        cost: 48€
+        date: 2024-02-29
+        notes: Used, bought on leboncoin
+    card: true
+    headphones: true
+
+  jubeat:
+    name: jubeat
+    permanent: true
+    cabinet:
+      owner: Compote
+      notes: Headphones mod, festo decorations, P4IO
+    card: true
+    headphones: true
+
+  wacca:
+    name: WACCA
+    permanent: true
+    cabinet:
+      cost: 3500€
+      notes: SpeedyLabs LEDs set, WACCA Reverse decorations
+    card: true
+    headphones: true
+
+  ddr:
+    name: DanceDanceRevolution and In The Groove
+    permanent: false
+    controllers:
+      - name: L-TEK USB EX
+        cost: 156€ + shipping 25€
+        date: 2018-10-25
+        notes: 100Hz, modded, added handbar (225€) on 2023-11-20
+      - name: L-TEK USB EX PRO 2 + Handbar + buttons
+        cost: 413€ + shipping 58€ + 20€ Stripe fee
+        date: 2023-11-20
+    card: true
+
+  popn:
+    permanent: false
+    controllers:
+      - name: Rodent PnM ASC
+        cost: 150€
+        notes: Used, bought off @nydy
+      - name: GAMO2 POPN (PS2 era)
+        cost: Gift from bemani-inside
+        use: false
+
+  piu:
+    name: Pump It Up
+    permanent: false
+    controllers:
+      - name: L-TEK PIU EX
+        cost: 75€
+        notes: Used, bought off @pearlgaming
+    card: false
+
+  gc:
+    name: Groove Coaster
+    permanent: false
+    controllers:
+      - name: YuanCon GENBU GC
+        cost: Gift from family
+        notes: Modded for Switch compatibility, drops inputs on holds
