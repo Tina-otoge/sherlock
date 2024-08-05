@@ -15,4 +15,4 @@ specs:
   storage: 128 GB (MMC) + 8 TB TOSHIBA NAS N300 (USB connected drives bay)
 
 services:
-  cockpit: https://turbo.tina.moe/cockpit/
+  cockpit: http://nagato.lan/cockpit/
