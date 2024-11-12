@@ -115,30 +115,31 @@
         color: var(--text-secondary);
     }
 
-    #apps {
+    #services {
         display: flex;
         align-items: start;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    #apps .item {
+    #services .item {
         width: 400px;
         margin: 1em;
     }
 
-    #apps .image img {
+    #services .image img {
         height: 200px;
+        max-width: 90%;
     }
 
-    #apps .description {
+    #services .description {
         font-size: 0.8em;
     }
 </style>
 <img src="{{ machine.style.welcome }}" id="welcome-pic">
 <h1>
     {{ name | title }}
-    <small>part of <a href="https://tina.moe">Tina</a>'s "Ragondin" Network</small>
+    <small>part of <a href="https://tina.moe">Tina</a>'s Network</small>
 </h1>
 
 <div id="description">
@@ -160,27 +161,46 @@
     <li><span class="key">Storage</span>: {{ machine.specs.storage }}</li>
 </ul>
 
+<h2>
+    <a
+        href="https://github.com/Tina-otoge/infra/blob/master/host_vars/{{ name }}.yml"
+        target="_blank"
+    >
+        Ansible configuration
+    </a>
+</h2>
+
 {% if machine.services is defined %}
-<h2>Tools</h2>
-<div id="apps">
+<h2>Services</h2>
+<div id="services">
     {% for name, url in machine.services.items() %}
-    {% set info = data.common.services.get(name) %}
+    {% set info = data.common.services.get(name) or {} %}
     <article class="item">
         <h3 class="name">
+            {% if url %}
             <a href="{{ url }}">
                 {{ info.get('name') or name | title }}
             </a>
+            {% else %}
+            {{ info.get('name') or name | title }}
+            {% endif %}
         </h3>
+        {% if info.image %}
         <div class="image">
+            {% if url %}
             <a href="{{ url }}">
                 <img src="{{ info.image }}">
             </a>
+            {% else %}
+            <img src="{{ info.image }}">
+            {% endif %}
         </div>
+        {% endif %}
         <p class="description">
             {{ info.description }}
         </p>
         <p>
-            <a href="{{ info.project_url }}">More info</a>
+            <a href="{{ info.project_url }}" target="_blank">More info</a>
         </p>
     </article>
     {% endfor %}

@@ -5,14 +5,22 @@ style:
   favicon: NagatoChibi.png
 
 specs:
-  domain: nagato.lan
-  url: http://nagato.lan
-  location: Tinarcade
+  domain: nagato.tina.moe
+  location: Teapot Arcade, Cachan, France
   product: Raspberry Pi 4 Model B Rev 1.5
   os: Rocky Linux 9.3
   cpu: 4 cores BCM2835 @ 1.5GHz
   ram: 8 GB
-  storage: 128 GB (MMC) + 8 TB TOSHIBA NAS N300 (USB connected drives bay)
+  storage: 128 GB (MMC) + 8 TB TOSHIBA NAS N300 + 2x 4TB WD Red (RAID 1)
 
 services:
-  cockpit: https://turbo.tina.moe/cockpit/
+  cockpit: https://nagato.tina.moe/cockpit/
+  flood: https://nagato.tina.moe/flood/
+  qbittorrent: https://nagato.tina.moe/qbit/
+  sonarr: https://nagato.tina.moe/sonarr/
+  lidarr: https://nagato.tina.moe/lidarr/
+  prowlarr: https://nagato.tina.moe/prowlarr/
+  syncthing: https://nagato.tina.moe/syncthing/
+  dnsmasq: null
+  ownfoil: https://foil.tina.moe/
+  photongenic: https://arcade.tina.moe/photon/

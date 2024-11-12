@@ -16,4 +16,8 @@ specs:
 services:
   cockpit: https://laffey.tina.moe/cockpit/
   flood: https://laffey.tina.moe/flood/
-  qbittorrent: https://laffey.tina.moe/qbit
+  qbittorrent: https://laffey.tina.moe/qbit/
+  syncthing: https://laffey.tina.moe/syncthing/
+  jellyfin: https://six.tina.moe/jellyfin/
+  uptime_kuma: https://kuma.tina.moe/
+  vaultwarden: https://vault.tina.moe

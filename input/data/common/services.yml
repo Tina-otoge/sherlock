@@ -2,8 +2,8 @@ cockpit:
   project_url: https://cockpit-project.org/
   image: https://cockpit-project.org/images/screenshot/software-updates-cve-auto.webp
   description: |
-    Cockpit is a web-based graphical interface for servers. It makes it easy to
-    perform tasks like starting containers, managing storage, monitoring
+    Cockpit is a web-based graphical interface for server admins. It makes it
+    easy to perform tasks like starting containers, managing storage, monitoring
     services, accessing files, and more.
 
 flood:
@@ -13,14 +13,85 @@ flood:
     Flood is a web UI for BitTorrent clients. It provides a modern interface for
     managing torrents, including adding, removing, and monitoring downloads,
     and support popular clients for its backend, such as rTorrent,
-    Transmission, Deluge, and qBittorrent.
+    Transmission, Deluge, and qBitTorrent.
 
 qbittorrent:
   name: qBitTorrent
   project_url: https://www.qbittorrent.org/
-  image: https://a.fsdn.com/con/app/proj/qbittorrent/screenshots/242193.jpg/max/max/1
+  image: https://www.qbittorrent.org/img/screenshots/linux/1.webp
   description: |
     An advanced and multi-platform BitTorrent client with a nice Qt user
     interface as well as a Web UI for remote control and an integrated search
     engine. qBittorrent aims to meet the needs of most users while using as
     little CPU and memory as possible. -- qbittorrent.org
+
+sonarr:
+  project_url: https://sonarr.tv/
+  image: https://sonarr.tv/img/slider/posters.png
+  description: |
+    Sonarr is a media collection manager with integrations to monitor and
+    download from various sources. It is specialized for TV shows.
+
+lidarr:
+  project_url: https://lidarr.audio/
+  image: https://lidarr.audio/img/slider/artistdetails.png
+  description: |
+    Lidarr is a music collection manager with integrations to monitor and
+    download from various sources. It is specialized for music.
+
+prowlarr:
+  project_url: https://prowlarr.com/
+  image: https://prowlarr.com/img/indexer-index.png
+  description: |
+    Prowlarr is a newsgroup indexer manager. It serves as a centralized service
+    to manage and search for indexers, such as torrent trackers, from tools like
+    Sonarr, Radarr, and Lidarr.
+
+dnsmasq:
+  project_url: http://www.thekelleys.org.uk/dnsmasq/doc.html
+  description: |
+    Dnsmasq is a DNS, DHCP, TFTP, and PXE server. It is a lightweight tool that
+    can be easily configured.
+
+syncthing:
+  project_url: https://syncthing.net/
+  image: https://syncthing.net/img/screenshot.png
+  description: |
+    Syncthing is a continuous file synchronization program. It synchronizes
+    files between two or more computers in real time. It supports unidirectional
+    and bidirectional synchronization.
+
+ownfoil:
+  project_url: https://github.com/a1ex4/ownfoil
+  description: |
+    Ownfoil is a game library server for the Nintendo Switch. It scans a folder
+    of games and exposes a Tinfoil compatible server to install games over the
+    network.
+
+photongenic:
+  project_url: https://github.com/Tina-otoge/photongenic
+  description: |
+    Project PHOTONGENIC is replay export Web UI for OBS enabled setups. It is
+    heavily inspired by aixxe's VEGA REPLAY system.
+
+uptime_kuma:
+  project_url: https://uptime.kuma.pet/
+  image: https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg
+  description: |
+    Uptime Kuma is a status monitoring tool similar to Uptime Robot. It provides
+    a web interface to monitor the status of your services and sends alerts via
+    various channels like Slack, Discord, Telegram, and more.
+
+jellyfin:
+  project_url: https://jellyfin.org/
+  image: https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png
+  description: |
+    Jellyfin is a media server software that can organize and stream your media
+    collection. It is a free and open-source alternative to Plex.
+
+vaultwarden:
+  project_url: https://github.com/dani-garcia/vaultwarden
+  description: |
+    Vaultwarden is a reimplementation of Bitwarden's server in Rust. It is a
+    free and open-source password and secrets manager that can be self-hosted.
+    It is compatible with existing Bitwarden clients and has a compatible API.
