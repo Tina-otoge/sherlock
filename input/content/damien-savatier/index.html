@@ -6,11 +6,21 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Damien Savatier</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
 
 <style>
+    body {
+        font-family: 'Noto Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fcfcfc;
+        min-width: 400px;
+    }
     #header {
         text-align: center;
+        font-family: 'Montserrat', sans-serif;
     }
 
     #photo-container {
@@ -20,6 +30,8 @@
         width: 300px;
         height: 300px;
         overflow: hidden;
+        margin-bottom: 40px;
+        margin-top: 60px;
     }
 
     #photo-container img {
@@ -40,7 +52,15 @@
             <img src="assets/photo.jpg" alt="Photo de Damien Savatier">
         </div>
         <h1>Damien Savatier</h1>
+        {#
+            URLs pro, LinkedIn, ...
+        #}
     </div>
+
+    {#
+        TODO afficher events en graph linéaire de haut en bas chronologique
+        utilisant data.damien.events
+    #}
 </body>
 
 </html>
