@@ -1,0 +1,16 @@
+frontends:
+  - name: Aonsoku
+    description: |
+      Aonsoku is a PC-only web and desktop client for Subsonic compatible media
+      servers. It has a modern and slick UI inspired by Spotify.
+    logo: https://raw.githubusercontent.com/victoralvesf/aonsoku/main/src-tauri/icons/128x128.png
+    url: https://soku.six.tina.moe
+    download: https://github.com/victoralvesf/aonsoku/releases
+    usage: For the desktop client use username "guest" and password "guest".
+
+  - name: Jellyfin
+    logo: https://avatars.githubusercontent.com/u/45698031?s=200&v=4
+    url: https://fin.six.tina.moe
+    usage: |
+      Use the guest account, it has no password. If you want your own account,
+      ie. to track your watched episodes, send me a request.

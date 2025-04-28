@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% set title='Studio Six - Tina\'s media vault' %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        /* blueish night effect gradient */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 10, 0.8) 50%,
+            rgba(0, 0, 20, 1) 100%
+        );
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        background-size: cover;
+        font-family: sans-serif;
+        color: white;
+    }
+
+    a, a:visited {
+        color: orange;
+        text-decoration: none;
+        transition: 0.5s ease-in;
+    }
+
+    a:hover {
+        color: white;
+        text-shadow: 0 0 2px white, 0 0 5px orange, 0 0 10px orange;
+    }
+
+    #main-title, #sub-title {
+        display: block;
+        text-align: center;
+    }
+
+    #main-title {
+        color: white;
+        text-transform: uppercase;
+        text-shadow:
+            0 0 7px white,
+            0 0 10px white,
+            0 0 42px red,
+            0 0 82px red,
+            0 0 92px red,
+            0 0 102px red,
+            0 0 151px red;
+        font-size: 4em;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #sub-title {
+        color: white;
+        font-size: 2em;
+        font-family: 'Hachi Maru Pop', sans-serif;
+        animation: buzzing-light 10s forwards;
+        animation-delay: 3s;
+    }
+
+    @keyframes buzzing-light {
+        0% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange, 0 0 25px orange, 0 0 30px orange, 0 0 35px orange; }
+        1% { text-shadow: none }
+        2% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange, 0 0 25px orange, 0 0 30px orange, 0 0 35px orange; }
+        3% { text-shadow: none }
+        4% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange, 0 0 25px orange, 0 0 30px orange, 0 0 35px orange; }
+        5% { text-shadow: none }
+        6% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange, 0 0 25px orange, 0 0 30px orange, 0 0 35px orange; }
+        100% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange, 0 0 25px orange, 0 0 30px orange, 0 0 35px orange; }
+        }
+
+    #main {
+        max-width: min(800px, 95%);
+        margin: 0 auto;
+        padding: 2em;
+    }
+
+    #frontends {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+        margin: 2em auto;
+    }
+    #frontends article {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+        display: flex;
+    }
+    #frontends article:hover {
+        transform: scale(1.05);
+    }
+    #frontends img {
+        max-width: 3em;
+        margin-right: 1em;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+    #frontends .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #frontends .content .title {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+    #frontends .content .description {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+    #frontends .content .usage {
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+
+</style>
+{% endblock head %}
+
+{% block body %}
+<header id="header">
+    <h1>
+        <span id="main-title">Studio</span>
+        <span id="sub-title">Six</span>
+    </h1>
+</header>
+
+<main id="main">
+    <p>
+        Studio Six is the codename for the media consumption stack I host in my
+        hobby infra. It is named after the Studio 66, a movie theater in my
+        birth town.
+    </p>
+
+    <h2>Frontends</h2>
+
+    <section id="frontends">
+        {% for frontend in data.studio.frontends %}
+        <article>
+            {% if frontend.logo %}
+            <img src="{{ frontend.logo }}">
+            {% endif %}
+            <div class="content">
+                <div class="title">{{ frontend.name }}</div>
+                <div class="description">
+                    {{ frontend.description }}
+                </div>
+                {% if frontend.usage %}
+                <div class="usage">
+                    <strong>Usage:</strong>
+                    {{ frontend.usage }}
+                </div>
+                {% endif %}
+                {% if frontend.url %}
+                <div class="url">
+                    <strong>URL:</strong>
+                    <a href="{{ frontend.url }}">{{ frontend.url }}</a>
+                </div>
+                {% endif %}
+                {% if frontend.download %}
+                <div class="download">
+                    <strong>Download:</strong>
+                    <a href="{{ frontend.download }}">{{ frontend.download }}</a>
+                </div>
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock body %}
