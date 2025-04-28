@@ -8,7 +8,7 @@ specs:
   domain: laffey.tina.moe
   location: Canada
   product: Kimsufi KS-10
-  os: Rocky Linux 9.3
+  os: Rocky Linux 9
   cpu: Intel i5-3570S @ 3.8GHz
   ram: 16 GiB DDR3 1333MHz
   storage: 1x 2TB SATA

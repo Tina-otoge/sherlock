@@ -7,7 +7,7 @@ specs:
   domain: turbo.tina.moe
   location: Paris region, France
   product: Freebox Delta Server (KVM)
-  os: Rocky Linux 9.3
+  os: Rocky Linux 9
   cpu: 2 (KVM)
   ram: 957 MB (KVM)
   storage: 32 GB (KVM) + 1 TB (Freebox Delta Server HDD)

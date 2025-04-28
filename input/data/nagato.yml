@@ -8,7 +8,7 @@ specs:
   domain: nagato.tina.moe
   location: Teapot Arcade, Cachan, France
   product: Raspberry Pi 4 Model B Rev 1.5
-  os: Rocky Linux 9.3
+  os: Rocky Linux 9
   cpu: 4 cores BCM2835 @ 1.5GHz
   ram: 8 GB
   storage: 128 GB (MMC) + 8 TB TOSHIBA NAS N300 + 2x 4TB WD Red (RAID 1)
